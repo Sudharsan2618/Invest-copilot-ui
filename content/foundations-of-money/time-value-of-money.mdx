@@ -1,0 +1,250 @@
+---
+title: "Time Value of Money: ₹100 Today vs Tomorrow"
+topic: "foundations-of-money"
+difficulty: "beginner"
+readTime: "10 min"
+order: 5
+prerequisites:
+  - "what-is-money"
+  - "inflation-silent-wealth-killer"
+keyTakeaways:
+  - "A rupee today is mathematically worth more than a rupee tomorrow — this is a LAW of finance, not an opinion"
+  - "Every day you delay investing is a day of compounding you can never get back — delay is the most expensive cost in finance"
+  - "Use TVM to make smart decisions: compare future payoffs to today's value, negotiate better salaries, and plan for retirement"
+quiz:
+  - question: "Your company offers ₹5,00,000 bonus today OR ₹6,50,000 bonus in 2 years. If you can earn 12% on your investments, which is worth more?"
+    options:
+      - "₹6.5L in 2 years — it's more money"
+      - "₹5L today — invested at 12% it becomes ₹6.27L in 2 years, but that's less than ₹6.5L so wait"
+      - "₹5L today — when you account for risk and inflation, the bird in hand is usually better"
+      - "They're exactly the same"
+    correct: 0
+    explanation: "₹5L × (1.12)^2 = ₹6.27L. ₹6.5L > ₹6.27L, so mathematically waiting IS better. BUT — this assumes the company keeps its promise, you stay employed, and no emergencies arise. In practice, the ₹5L today might still be preferable because of the certainty premium and reinvestment flexibility."
+  - question: "Why is the concept of 'opportunity cost' directly connected to TVM?"
+    options:
+      - "They're not connected"
+      - "Because every rupee has alternative uses — spending ₹500 on dinner means losing what ₹500 could have become if invested"
+      - "Because opportunities only come once"
+      - "Because banks charge fees"
+    correct: 1
+    explanation: "TVM means money can grow over time. So spending ₹500 today doesn't cost you ₹500 — it costs you the FUTURE value of that ₹500. At 12% for 20 years, that dinner costs you ₹4,824 in future value. Understanding this changes every spending decision."
+  - question: "You need ₹50 lakh for your child's education in 15 years. How much must you invest monthly in a fund returning 12% to reach this goal?"
+    options:
+      - "₹27,778/month (simply dividing ₹50L by 180 months)"
+      - "₹10,000/month — compounding does the rest"
+      - "₹10,030/month — the precise SIP needed, which is 64% less than the naive calculation"
+      - "₹40,000/month — you can't take risks with education money"
+    correct: 2
+    explanation: "A SIP calculator shows ₹10,030/month at 12% for 15 years gives ~₹50L. Without TVM knowledge, you'd think you need ₹27,778/month (flat division). TVM saved you ₹17,748/month — that's ₹2.13L per year freed up for other goals or living expenses."
+---
+
+## The Most Powerful Concept in All of Finance
+
+If you only learn ONE concept from this entire course, let it be this one. The <JargonTooltip term="Time Value of Money" definition="The principle that money available now is worth more than the same amount in the future, because money can earn returns over time.">Time Value of Money</JargonTooltip> (TVM) is the foundation of every financial decision ever made — from buying a house to negotiating your salary to planning retirement.
+
+It sounds academic, but it's intensely practical. Once you understand TVM, you'll see the world differently. Every purchase, every paycheck, every financial decision has a hidden time dimension that most people ignore.
+
+<Analogy>
+Think of money like a mango seed. A seed you plant today can grow into a tree that produces hundreds of mangoes over 20 years. A seed you receive 5 years from now? It's the same seed — but it missed 5 years of growing. It'll produce fewer mangoes in total.
+
+Now here's the twist: in finance, **every single rupee is a seed.** A ₹500 rupee note is a seed that can be planted (invested). The question is: are you planting your seeds or hoarding them in a drawer?
+
+</Analogy>
+
+## Why ₹1 Today ≠ ₹1 Tomorrow
+
+Three forces make today's money more valuable than tomorrow's money:
+
+<ComparisonTable
+  title="The Three Reasons Money Has Time Value"
+  headers={["Force", "How It Works", "Real Impact"]}
+  rows={[
+    [
+      "Earning Potential",
+      "Money invested today earns returns",
+      "₹100 at 12% becomes ₹112 in one year. The ₹100 you get next year can't earn that year's return",
+    ],
+    [
+      "Inflation Erosion",
+      "Prices rise, so future rupees buy less",
+      "₹100 next year buys only ₹93-95 worth of stuff at 5-7% inflation",
+    ],
+    [
+      "Uncertainty Premium",
+      "The future is never guaranteed",
+      "A promised ₹100 next year might not materialize — job loss, company closure, policy changes",
+    ],
+  ]}
+/>
+
+<KeyConcept title="The True Cost of Waiting">
+Every day your money sits uninvested is a day it could have been growing. This isn't philosophical — it's arithmetic.
+
+**₹1,00,000 invested today at 12% for 30 years = ₹29,96,000**
+**₹1,00,000 invested 5 years late at 12% for 25 years = ₹17,00,000**
+
+Five years of delay cost you **₹12,96,000** — on just ₹1 lakh. Your procrastination literally costs more than the original amount. This is why financial advisors say: **"The best time to invest was yesterday. The second best time is today."**
+
+</KeyConcept>
+
+## The Two Faces of TVM: Future Value & Present Value
+
+<ComparisonTable
+  title="Future Value vs Present Value — Two Questions, One Formula"
+  headers={["Concept", "The Question It Answers", "Real-Life Use Case"]}
+  rows={[
+    [
+      "Future Value (FV)",
+      "If I invest ₹X today, how much will I have in Y years?",
+      "How much will my ₹5L SIP be worth when I retire in 25 years?",
+    ],
+    [
+      "Present Value (PV)",
+      "If I need ₹X in Y years, how much do I need to invest today?",
+      "If my child's education costs ₹50L in 15 years, how much SIP do I need now?",
+    ],
+  ]}
+/>
+
+<FormulaBox
+  title="Future Value Formula"
+  formula="FV = PV × (1 + r)^t"
+  variables={[
+    { symbol: "FV", meaning: "Future Value — what your money grows to" },
+    { symbol: "PV", meaning: "Present Value — what you invest today" },
+    { symbol: "r", meaning: "Annual return rate (12% = 0.12)" },
+    { symbol: "t", meaning: "Number of years" },
+  ]}
+/>
+
+## TVM Applied to Real Indian Decisions
+
+<ComparisonTable
+  title="How Much ₹1,00,000 Becomes at Different Return Rates"
+  headers={["Investment Vehicle", "Return", "10 Years", "20 Years", "30 Years"]}
+  rows={[
+    ["Savings Account", "3.5%", "₹1.41L", "₹2.00L", "₹2.81L"],
+    ["Fixed Deposit", "7%", "₹1.97L", "₹3.87L", "₹7.61L"],
+    ["PPF", "7.1%", "₹1.99L", "₹3.95L", "₹7.85L"],
+    ["Gold (historical)", "10%", "₹2.59L", "₹6.73L", "₹17.45L"],
+    ["Nifty 50 Index Fund", "12%", "₹3.11L", "₹9.65L", "₹29.96L"],
+    ["Top equity funds", "15%", "₹4.05L", "₹16.37L", "₹66.21L"],
+  ]}
+/>
+
+<IndianContext>
+**TVM is why SIPs work so well in India:**
+
+The average Indian worker has 30-35 years of earning life (age 25 to 58). Here's what ₹5,000/month SIP looks like at 12%:
+
+- **Started at 25, invested till 55:** Corpus = ₹1.76 crore (total invested: ₹18L)
+- **Started at 30, invested till 55:** Corpus = ₹94.9 lakh (total invested: ₹15L)
+- **Started at 35, invested till 55:** Corpus = ₹49.4 lakh (total invested: ₹12L)
+
+Starting at 25 vs 35 = **₹1.27 crore extra** on just ₹6L more invested. The earlier money had 10 more years of compounding — that's 10 years of "free growth" that can never be recovered.
+
+</IndianContext>
+
+## TVM in Everyday Decisions
+
+TVM isn't just for investment planning. It should influence every financial decision you make:
+
+<ComparisonTable
+  title="Everyday Decisions Through the TVM Lens"
+  headers={["Decision", "Surface Thinking", "TVM Thinking"]}
+  rows={[
+    [
+      "Buy latest phone (₹80K)",
+      "Can I afford it?",
+      "₹80K at 12% for 10 years = ₹2.49L. Is this phone worth ₹2.49L to me?",
+    ],
+    [
+      "Salary negotiation",
+      "They offered ₹12 LPA, good enough",
+      "Each ₹1L/year extra = ₹8,333/month. Invested for 20 years = ₹1 crore. Fight for every lakh.",
+    ],
+    [
+      "Weekend trip (₹15K)",
+      "I deserve a break",
+      "₹15K/month saved instead, invested for 25 years = ₹ 2.84 crore. Skip 2-3 trips/year, invest the rest",
+    ],
+    [
+      "Taking a 5% raise vs. 10% at new company",
+      "Leaving is scary",
+      "On ₹10 LPA, the 5% difference = ₹50K/year. Over 10 years invested = ₹8.8L opportunity cost of staying",
+    ],
+    [
+      "Prepaying home loan vs. investing",
+      "Being debt-free feels better",
+      "If loan is 8.5% and you can earn 12% investing, the math favors investing (but psychology matters too)",
+    ],
+  ]}
+/>
+
+<InteractiveScenario
+  scenario="Your company offers you two bonus options: Option A: ₹5,00,000 right now. Option B: ₹3,00,000 now + ₹3,50,000 in exactly 1 year. Assume you can invest at 12% and inflation is 6%. Which is financially better?"
+  options={[
+    {
+      text: "Option A: ₹5L now — bird in hand!",
+      feedback:
+        "₹5L invested at 12% for 1 year = ₹5.60L. Total after 1 year: ₹5.60L.",
+      isRecommended: false,
+    },
+    {
+      text: "Option B: ₹3L now + ₹3.5L later = ₹6.5L total",
+      feedback:
+        "₹3L invested at 12% for 1 year = ₹3.36L. Plus ₹3.5L received. Total: ₹6.86L. Option B wins by ₹1.26L! The delayed payment is large enough to offset the wait. ✅",
+      isRecommended: true,
+    },
+    {
+      text: "They're roughly equal",
+      feedback:
+        "Option B gives ₹6.86L vs Option A's ₹5.60L after 1 year. Option B wins decisively. Always do the math before choosing!",
+      isRecommended: false,
+    },
+  ]}
+/>
+
+## The Opportunity Cost of Delay: A Visual
+
+<ComparisonChart
+  title="Cost of Delaying a ₹10,000/month SIP by Just 5 Years (at 12%)"
+  items={[
+    {
+      label: "Start at age 25 (invest 30 yrs)",
+      value: 35209787,
+      color: "success",
+    },
+    {
+      label: "Start at age 30 (invest 25 yrs)",
+      value: 18976889,
+      color: "warning",
+    },
+    { label: "Gap = ₹1.62 crore", value: 16232898, color: "destructive" },
+  ]}
+/>
+
+That gap — **₹1.62 crore** — is the price of procrastination on a modest ₹10,000/month SIP. Every year you delay costs you roughly ₹20-30 lakh in future wealth.
+
+<EmbeddedCalculatorLink
+  type="compound-interest"
+  title="See Your Personal TVM Numbers"
+  description="Enter your investment amount, expected return, and time horizon to see how much your money can grow →"
+/>
+
+<DosDonts
+  dos={[
+    "Start investing TODAY — not tomorrow, not next month, not when you get a raise. Today.",
+    "Use the opportunity cost lens for every major purchase — what would this money become if invested?",
+    "Negotiate your salary aggressively — every ₹1L/year difference compounds over your career",
+    "Calculate both FV and PV for every financial goal — it'll surprise you how little you need to invest if you start early",
+    "Think of time as the most valuable currency — it's the one thing money can't buy back",
+  ]}
+  donts={[
+    "Don't say 'it's only ₹500/month, why bother?' — ₹500/month for 30 years at 12% = ₹17.6 lakh",
+    "Don't wait for the 'right time' to invest — time IN the market beats timing the market",
+    "Don't ignore the power of 5 years — even small head starts create massive gaps",
+    "Don't make financial decisions based only on today's numbers — always project into the future",
+    "Don't let the complexity of formulas stop you — SIP calculators do the math for you in seconds",
+  ]}
+/>
