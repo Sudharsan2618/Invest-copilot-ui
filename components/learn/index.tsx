@@ -453,66 +453,127 @@ export type QuizQuestion = {
 };
 
 export function QuizBlock({ questions = [] }: { questions: QuizQuestion[] }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number | null>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [revealed, setRevealed] = useState<Record<number, boolean>>({});
+  const [direction, setDirection] = useState<"left" | "right">("left");
   if (!questions || !questions.length) return null;
 
+  const totalSlides = questions.length + 1; // questions + results slide
+  const isResultSlide = currentSlide === questions.length;
+
   const handleSelect = (qIdx: number, aIdx: number) => {
-    if (submitted) return;
+    if (revealed[qIdx]) return;
     setAnswers((prev) => ({ ...prev, [qIdx]: aIdx }));
   };
 
-  const handleSubmit = () => {
-    setSubmitted(true);
+  const handleReveal = (qIdx: number) => {
+    setRevealed((prev) => ({ ...prev, [qIdx]: true }));
+  };
+
+  const goNext = () => {
+    if (currentSlide < totalSlides - 1) {
+      setDirection("left");
+      setCurrentSlide((s) => s + 1);
+    }
+  };
+
+  const goPrev = () => {
+    if (currentSlide > 0) {
+      setDirection("right");
+      setCurrentSlide((s) => s - 1);
+    }
+  };
+
+  const goToSlide = (idx: number) => {
+    setDirection(idx > currentSlide ? "left" : "right");
+    setCurrentSlide(idx);
   };
 
   const handleReset = () => {
     setAnswers({});
-    setSubmitted(false);
+    setRevealed({});
+    setDirection("right");
+    setCurrentSlide(0);
   };
 
-  const correctCount = submitted
-    ? questions.filter((q, i) => answers[i] === q.correct).length
-    : 0;
+  const correctCount = questions.filter(
+    (q, i) => revealed[i] && answers[i] === q.correct
+  ).length;
 
-  const allAnswered = Object.keys(answers).length === questions.length;
+  const allRevealed = questions.every((_, i) => revealed[i]);
 
   return (
-    <div className="my-6 rounded-2xl border border-border/60 bg-card">
-      <div className="px-4 py-4 sm:px-6 sm:py-5">
+    <div className="my-6 rounded-2xl border border-border/60 bg-card overflow-hidden">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-border/40">
         <div className="flex items-center gap-2">
           <BookOpen className="h-4 w-4 text-primary shrink-0" />
           <h2 className="text-base font-semibold text-foreground">Quick Quiz</h2>
-          {submitted && (
-            <Badge
-              variant={
-                correctCount === questions.length ? "default" : "outline"
-              }
-              className="ml-auto text-xs"
-            >
-              {correctCount}/{questions.length} Correct
-            </Badge>
-          )}
         </div>
+        <span className="text-[12px] text-muted-foreground">
+          {isResultSlide ? "Results" : `${currentSlide + 1} of ${questions.length}`}
+        </span>
+      </div>
 
-        <div className="mt-5 flex flex-col gap-6">
+      {/* Progress dots */}
+      <div className="flex items-center justify-center gap-1.5 px-4 pt-3 sm:pt-4">
+        {questions.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goToSlide(i)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === currentSlide
+                ? "w-6 bg-primary"
+                : revealed[i]
+                ? answers[i] === questions[i].correct
+                  ? "w-2 bg-[var(--success)]"
+                  : "w-2 bg-destructive"
+                : answers[i] != null
+                ? "w-2 bg-primary/40"
+                : "w-2 bg-border"
+            }`}
+            aria-label={`Go to question ${i + 1}`}
+          />
+        ))}
+        <button
+          onClick={() => goToSlide(questions.length)}
+          className={`h-2 rounded-full transition-all duration-300 ${
+            isResultSlide ? "w-6 bg-primary" : "w-2 bg-border"
+          }`}
+          aria-label="Go to results"
+        />
+      </div>
+
+      {/* Slide container */}
+      <div className="relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-300 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {/* Question slides */}
           {questions.map((q, qIdx) => {
             const userAnswer = answers[qIdx];
-            const isCorrect = submitted && userAnswer === q.correct;
+            const isRevealed = revealed[qIdx];
+            const isCorrect = isRevealed && userAnswer === q.correct;
 
             return (
-              <div key={qIdx}>
-                <p className="text-[14px] font-medium text-foreground leading-relaxed">
-                  {qIdx + 1}. {q.question}
+              <div
+                key={qIdx}
+                className="w-full shrink-0 px-4 py-4 sm:px-6 sm:py-5"
+              >
+                <p className="text-[15px] font-medium text-foreground leading-relaxed">
+                  {q.question}
                 </p>
-                <div className="mt-3 flex flex-col gap-2">
+
+                <div className="mt-4 flex flex-col gap-2">
                   {q.options.map((option, aIdx) => {
                     let btnClass =
-                      "border-border/60 text-foreground active:bg-primary/5";
-                    if (userAnswer === aIdx && !submitted) {
-                      btnClass = "border-primary bg-primary/10 text-primary";
+                      "border-border/60 text-foreground hover:border-primary/30 active:scale-[0.99]";
+                    if (userAnswer === aIdx && !isRevealed) {
+                      btnClass = "border-primary bg-primary/10 text-primary ring-1 ring-primary/20";
                     }
-                    if (submitted) {
+                    if (isRevealed) {
                       if (aIdx === q.correct) {
                         btnClass =
                           "border-[var(--success)] bg-[var(--success)]/10 text-[var(--success)]";
@@ -521,7 +582,7 @@ export function QuizBlock({ questions = [] }: { questions: QuizQuestion[] }) {
                           "border-destructive bg-destructive/10 text-destructive";
                       } else {
                         btnClass =
-                          "border-border/40 text-muted-foreground opacity-50";
+                          "border-border/30 text-muted-foreground/50";
                       }
                     }
 
@@ -529,25 +590,44 @@ export function QuizBlock({ questions = [] }: { questions: QuizQuestion[] }) {
                       <button
                         key={aIdx}
                         onClick={() => handleSelect(qIdx, aIdx)}
-                        disabled={submitted}
-                        className={`flex items-start gap-2.5 rounded-xl border px-3.5 py-3 text-left text-[14px] leading-relaxed transition-colors ${btnClass}`}
+                        disabled={isRevealed}
+                        className={`flex items-start gap-2.5 rounded-xl border px-3.5 py-3 text-left text-[14px] leading-relaxed transition-all duration-200 ${btnClass}`}
                       >
-                        {submitted && aIdx === q.correct && (
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
-                        )}
-                        {submitted &&
-                          userAnswer === aIdx &&
-                          aIdx !== q.correct && (
-                            <XCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[11px] font-medium">
+                          {isRevealed && aIdx === q.correct ? (
+                            <CheckCircle2 className="h-4 w-4" />
+                          ) : isRevealed && userAnswer === aIdx && aIdx !== q.correct ? (
+                            <XCircle className="h-4 w-4" />
+                          ) : (
+                            String.fromCharCode(65 + aIdx)
                           )}
-                        {option}
+                        </span>
+                        <span className="flex-1">{option}</span>
                       </button>
                     );
                   })}
                 </div>
-                {submitted && (
+
+                {/* Reveal / explanation area */}
+                {!isRevealed ? (
+                  <div className="mt-4 flex items-center gap-3">
+                    <Button
+                      onClick={() => handleReveal(qIdx)}
+                      disabled={userAnswer == null}
+                      size="sm"
+                      className="rounded-xl px-5 h-10"
+                    >
+                      Check Answer
+                    </Button>
+                    {userAnswer == null && (
+                      <span className="text-[12px] text-muted-foreground">
+                        Select an option first
+                      </span>
+                    )}
+                  </div>
+                ) : (
                   <div
-                    className={`mt-2 rounded-xl px-3.5 py-3 text-[13px] leading-relaxed ${
+                    className={`mt-3 rounded-xl px-3.5 py-3 text-[13px] leading-relaxed ${
                       isCorrect
                         ? "bg-[var(--success)]/5 text-[var(--success)]"
                         : "bg-destructive/5 text-destructive"
@@ -560,24 +640,74 @@ export function QuizBlock({ questions = [] }: { questions: QuizQuestion[] }) {
               </div>
             );
           })}
-        </div>
 
-        <div className="mt-5 flex items-center gap-3">
-          {!submitted ? (
-            <Button onClick={handleSubmit} disabled={!allAnswered} size="sm" className="rounded-xl px-5 h-10">
-              Check Answers
-            </Button>
-          ) : (
-            <Button onClick={handleReset} variant="outline" size="sm" className="rounded-xl px-5 h-10">
-              Try Again
-            </Button>
-          )}
-          {!allAnswered && !submitted && (
-            <span className="text-xs text-muted-foreground">
-              Answer all to check
-            </span>
-          )}
+          {/* Results slide */}
+          <div className="w-full shrink-0 px-4 py-6 sm:px-6 sm:py-8">
+            <div className="flex flex-col items-center text-center">
+              <div className={`flex h-16 w-16 items-center justify-center rounded-full text-2xl font-bold ${
+                allRevealed && correctCount === questions.length
+                  ? "bg-[var(--success)]/10 text-[var(--success)]"
+                  : allRevealed
+                  ? "bg-primary/10 text-primary"
+                  : "bg-muted text-muted-foreground"
+              }`}>
+                {allRevealed ? `${correctCount}/${questions.length}` : "?"}
+              </div>
+
+              <h3 className="mt-3 text-lg font-semibold text-foreground">
+                {!allRevealed
+                  ? "Answer all questions first"
+                  : correctCount === questions.length
+                  ? "Perfect Score! 🎉"
+                  : correctCount >= questions.length / 2
+                  ? "Good Job! 👍"
+                  : "Keep Learning! 📚"}
+              </h3>
+
+              <p className="mt-1 text-[13px] text-muted-foreground max-w-xs">
+                {!allRevealed
+                  ? `You've answered ${Object.keys(revealed).length} of ${questions.length} questions. Go back and complete the rest.`
+                  : correctCount === questions.length
+                  ? "You nailed every question. You're ready to move on!"
+                  : `You got ${correctCount} out of ${questions.length} correct. Review the explanations and try again.`}
+              </p>
+
+              {allRevealed && (
+                <Button
+                  onClick={handleReset}
+                  variant="outline"
+                  size="sm"
+                  className="mt-4 rounded-xl px-5 h-10"
+                >
+                  Try Again
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* Navigation footer */}
+      <div className="flex items-center justify-between border-t border-border/40 px-4 py-3 sm:px-6">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={goPrev}
+          disabled={currentSlide === 0}
+          className="rounded-xl h-9 px-3 text-[13px]"
+        >
+          ← Back
+        </Button>
+
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={goNext}
+          disabled={currentSlide === totalSlides - 1}
+          className="rounded-xl h-9 px-3 text-[13px]"
+        >
+          Next →
+        </Button>
       </div>
     </div>
   );
