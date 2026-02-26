@@ -73,10 +73,11 @@ export function ConceptImage({
               <Image
                 src={src}
                 alt={alt}
-                width={400}
-                height={260}
-                className="h-auto max-h-48 sm:max-h-56 w-full object-contain"
+                width={600}
+                height={400}
+                className="h-auto max-h-64 sm:max-h-80 w-full object-cover rounded-lg"
                 onError={() => setError(true)}
+                priority
               />
             )}
           </div>
@@ -105,10 +106,11 @@ export function ConceptImage({
           <Image
             src={src}
             alt={alt}
-            width={500}
-            height={300}
-            className="h-auto max-h-52 sm:max-h-64 w-full object-contain"
+            width={700}
+            height={450}
+            className="h-auto max-h-72 sm:max-h-96 w-full object-cover rounded-lg"
             onError={() => setError(true)}
+            priority
           />
         )}
       </div>
@@ -128,14 +130,15 @@ function ImagePlaceholder({ alt, prompt, compact }: { alt: string; prompt?: stri
         <BookOpen className="mx-auto h-5 w-5 opacity-30" />
         <p className="mt-1.5 text-xs font-medium">{alt}</p>
         {prompt && (
-          <details className="mt-2 text-left">
-            <summary className="cursor-pointer text-[11px] text-primary hover:underline">
-              🎨 Image prompt
-            </summary>
-            <p className="mt-1.5 rounded-lg bg-card p-2 text-[11px] leading-relaxed text-muted-foreground">
-              {prompt}
-            </p>
-          </details>
+          <div className="mt-2">
+            <Image
+              src={prompt}
+              alt="Generated image"
+              width={400}
+              height={250}
+              className="rounded-lg border border-border/30 w-full h-auto object-cover shadow-sm"
+            />
+          </div>
         )}
       </div>
     </div>
