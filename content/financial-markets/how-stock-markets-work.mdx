@@ -1,0 +1,256 @@
+---
+title: "How Stock Markets Actually Work"
+topic: "financial-markets"
+difficulty: "beginner"
+readTime: "8 min"
+order: 2
+prerequisites:
+  - "what-is-stock-market"
+keyTakeaways:
+  - "Every stock trade needs a buyer AND a seller who disagree on value — when you think a stock is cheap and buy it, someone else thinks it's expensive and sells it. Both can't be right."
+  - "Your buy/sell order travels through a chain: You → Broker (Zerodha/Groww) → Exchange (NSE/BSE) → Clearing Corporation (NSCCL) → Depository (CDSL/NSDL) — all in under 1 second."
+  - "Settlement in India is T+1 — when you buy shares on Monday, they're officially yours on Tuesday. This is faster than most countries in the world."
+quiz:
+  - question: "You place an order to buy 10 shares of HDFC Bank at ₹1,600. When does the trade happen?"
+    options:
+      - "Immediately, as soon as you press 'Buy'"
+      - "Only when someone else is willing to sell 10 shares at ₹1,600 or less"
+      - "At the end of the trading day"
+      - "When the exchange decides"
+    correct: 1
+    explanation: "Every trade requires a counterparty — a seller willing to sell at your price. Your order goes into an electronic order book. If someone has a sell order at ₹1,600 or less, the trade matches instantly. If not, your order waits in the queue until a seller appears (or you cancel it)."
+  - question: "What happens to your shares after you buy them?"
+    options:
+      - "They're stored in your broker's safe"
+      - "They're stored electronically in your Demat account at CDSL or NSDL"
+      - "The company sends you paper certificates"
+      - "They exist only as numbers on your broker's app"
+    correct: 1
+    explanation: "Shares are held electronically in your Demat (dematerialised) account, maintained by CDSL or NSDL — India's two depositories. Even if your broker (Zerodha, Groww) shuts down, your shares are safe because they're in YOUR Demat account, not the broker's. This is a crucial safety feature of Indian markets."
+  - question: "Indian stock markets are open for trading:"
+    options:
+      - "24/7 like cryptocurrency"
+      - "Monday to Friday, 9:15 AM to 3:30 PM (with holidays)"
+      - "Monday to Saturday, 9 AM to 5 PM"
+      - "Only when the market is 'green'"
+    correct: 1
+    explanation: "NSE and BSE are open Monday to Friday, 9:15 AM to 3:30 PM IST, excluding national holidays and declared market holidays. There's also a pre-open session (9:00-9:15 AM) where opening prices are determined. Weekend and late-night trading is not available for Indian stocks (unlike crypto or US markets)."
+---
+
+You open Zerodha. You search "RELIANCE." You see: ₹2,850. You tap "Buy." You enter "10 shares." You hit confirm. ₹28,500 leaves your account. Done.
+
+But what just happened? In that 3-second transaction, seven different systems talked to each other, thousands of orders were matched, and a clearing corporation guaranteed that both you AND the seller got what you were promised.
+
+Let's pull back the curtain.
+
+<Analogy>
+  Think of the stock market like Swiggy. You (the buyer) want biryani. A
+  restaurant (the seller) has biryani. But you don't go to the restaurant
+  directly. Swiggy (the exchange) matches your order, a delivery partner (the
+  clearing corporation) ensures the food reaches you, and Swiggy's payment
+  system ensures the restaurant gets paid. The stock market works the same way —
+  with middlemen that ensure trust, speed, and fairness.
+</Analogy>
+
+## The Order Book: Where Buyers Meet Sellers
+
+At any moment, thousands of people want to buy TCS and thousands want to sell. Their orders sit in an electronic **order book** — think of it as two queues:
+
+<ComparisonTable
+  title="TCS Order Book (Simplified Snapshot)"
+  headers={["Buyers (Bids)", "Price", "Sellers (Asks)"]}
+  rows={[
+    ["200 shares wanted", "₹3,780", "—"],
+    ["450 shares wanted", "₹3,775", "—"],
+    ["300 shares wanted", "₹3,770", "—"],
+    ["—", "₹3,785", "150 shares available"],
+    ["—", "₹3,790", "500 shares available"],
+    ["—", "₹3,800", "320 shares available"],
+  ]}
+/>
+
+The **highest bid** (₹3,780) and the **lowest ask** (₹3,785) are just ₹5 apart. This gap is called the <JargonTooltip term="Bid-Ask Spread" definition="The difference between the highest price buyers will pay (bid) and the lowest price sellers will accept (ask). Smaller spread = more liquid market.">bid-ask spread</JargonTooltip>.
+
+<KeyConcept title="How Prices Move">
+  When more people want to buy than sell, buyers raise their bids → price goes
+  UP. When more people want to sell than buy, sellers lower their asks → price
+  goes DOWN. Every price movement you see on your Zerodha screen is the result
+  of this constant negotiation between thousands of real people.
+</KeyConcept>
+
+## The Trade Lifecycle: From Your Thumb to Your Demat
+
+Here's what happens when you tap "Buy" on your broker app:
+
+<ComparisonTable
+  title="Your Buy Order's Journey"
+  headers={["Step", "What Happens", "Time"]}
+  rows={[
+    ["1. You → Broker", "You place order in Zerodha/Groww app", "Instant"],
+    [
+      "2. Broker → Exchange",
+      "Broker forwards your order to NSE/BSE",
+      "Milliseconds",
+    ],
+    [
+      "3. Exchange matches",
+      "Exchange finds a seller at your price from the order book",
+      "Microseconds",
+    ],
+    [
+      "4. Trade confirmation",
+      "Both buyer and seller notified: trade done!",
+      "Instant",
+    ],
+    [
+      "5. Clearing",
+      "NSCCL verifies both parties have money/shares",
+      "Same day",
+    ],
+    [
+      "6. Settlement (T+1)",
+      "Money debited from you → credited to seller. Shares transferred to your Demat.",
+      "Next business day",
+    ],
+  ]}
+/>
+
+<IndianContext>
+  India moved to T+1 settlement in January 2023, making it one of the fastest
+  settlement systems globally. The US only moved to T+1 in May 2024 — India was
+  ahead by over a year. Previously, India had T+2 settlement (2 working days).
+  SEBI is now exploring T+0 (same-day) settlement for select stocks.
+</IndianContext>
+
+## The Players Behind the Scenes
+
+You interact with Zerodha. But behind that app, there's an entire ecosystem:
+
+<ComparisonTable
+  title="Who Does What in Indian Markets"
+  headers={["Entity", "Role", "Real Example"]}
+  rows={[
+    [
+      "Broker",
+      "Takes your order, routes it to exchange",
+      "Zerodha, Groww, Upstox, Angel One",
+    ],
+    [
+      "Exchange",
+      "Matches buy/sell orders, ensures fair price",
+      "NSE (National Stock Exchange), BSE (Bombay Stock Exchange)",
+    ],
+    [
+      "Clearing Corporation",
+      "Guarantees both sides honour the trade",
+      "NSCCL (NSE Clearing), ICCL (BSE Clearing)",
+    ],
+    [
+      "Depository",
+      "Holds your shares electronically in your Demat account",
+      "CDSL, NSDL",
+    ],
+    [
+      "SEBI",
+      "Regulates everything, protects investors",
+      "Securities and Exchange Board of India",
+    ],
+  ]}
+/>
+
+<KeyConcept title="Why This Matters to You">
+  If your broker (say, Zerodha) goes bankrupt tomorrow — **your shares are
+  SAFE.** They're not held by Zerodha. They're in your personal Demat account at
+  CDSL/NSDL. You'd simply transfer them to a new broker. This separation of
+  broker and depository is one of the strongest investor protections in Indian
+  markets.
+</KeyConcept>
+
+## Types of Orders You Can Place
+
+Not all buy/sell orders are the same:
+
+<ComparisonTable
+  title="Order Types Explained"
+  headers={["Order Type", "What It Does", "When to Use"]}
+  rows={[
+    [
+      "Market Order",
+      "Buy/sell immediately at whatever the current price is",
+      "When speed matters more than price — you just want in/out NOW",
+    ],
+    [
+      "Limit Order",
+      "Buy/sell only at your specified price (or better)",
+      "When you want a specific price — 'I'll buy TCS only if it drops to ₹3,700'",
+    ],
+    [
+      "Stop-Loss Order",
+      "Automatically sell if price drops to a trigger level",
+      "To limit losses — 'If HDFC drops below ₹1,500, sell automatically'",
+    ],
+  ]}
+/>
+
+For long-term investors using SIPs, you'll mostly use **market orders** — because whether you buy Nifty 50 at ₹24,100 or ₹24,150 doesn't matter over a 10-year horizon.
+
+<CaseStudy title="What Happens During a Market Crash — Live Example">
+  **March 23, 2020.** COVID lockdown announced. India's Nifty 50 had crashed 38% from its February high. Here's what the order book looked like:
+
+- **Sellers flooding the market:** Panicked investors placing thousands of sell orders at ANY price
+- **Buyers stepping back:** Very few willing to buy into the chaos
+- **Bid-ask spreads widened:** From ₹1-2 normally to ₹10-50 on some stocks
+- **Circuit breakers triggered:** NSE halted trading twice because prices fell too fast (limit down of 10% and 15%)
+
+**Anyone who bought on that day and held?** Nifty 50 doubled within 18 months — from 7,610 to 18,000+. The market didn't change. The businesses didn't change. Only people's EMOTIONS changed.
+
+This is why understanding market mechanics matters — when you know how it works, crashes become opportunities, not nightmares.
+
+</CaseStudy>
+
+<InteractiveScenario
+  scenario="You want to invest ₹50,000 in Nifty 50 index fund. The index is at 24,000 today but was 23,500 last week. What do you do?"
+  options={[
+    {
+      text: "Wait for it to drop back to 23,500 before buying",
+      feedback:
+        "You might wait forever. What if it goes to 25,000 and never comes back to 23,500? 'Time in the market beats timing the market.' Over 10+ years, the difference between buying at 24,000 vs 23,500 (2%) is meaningless.",
+      isRecommended: false,
+    },
+    {
+      text: "Invest ₹50,000 via SIP (₹10,000/month for 5 months) — let rupee-cost averaging handle the timing",
+      feedback:
+        "Smart approach! SIP investing means you buy at different prices each month — sometimes high, sometimes low. Over time, this averages out and removes the stress of timing. You get the benefit of the market's long-term upward trend without worrying about short-term movements. ✅",
+      isRecommended: true,
+    },
+    {
+      text: "Invest the entire ₹50,000 right now as a lump sum",
+      feedback:
+        "Statistically, lump sum investing beats SIP ~65% of the time (because markets trend up). But for beginners, the psychological comfort of SIP is worth the slight statistical edge of lump sum. Either approach works — the worst option is doing nothing.",
+      isRecommended: false,
+    },
+    {
+      text: "Wait for a crash, then invest everything",
+      feedback:
+        "Nobody can predict crashes. People who waited for a 'better entry' after March 2020 are still waiting while the market doubled. Even if a crash comes, most people are too scared to invest during one. The correct strategy: invest regularly regardless of market level.",
+      isRecommended: false,
+    },
+  ]}
+/>
+
+<DosDonts
+  dos={[
+    "Open a Demat + trading account with a SEBI-registered broker (Zerodha, Groww) — takes 15 minutes online",
+    "Understand the order book concept — it removes the mystery from price movements",
+    "Know that your shares are in YOUR Demat account (CDSL/NSDL), not with your broker — they're safe even if the broker fails",
+    "Use limit orders for individual stock purchases, market orders for SIPs and index funds",
+    "Remember: T+1 settlement means shares are yours by the NEXT business day",
+  ]}
+  donts={[
+    "Don't use unregistered brokers or trading apps — check SEBI registration on sebi.gov.in",
+    "Don't place market orders for illiquid stocks (low-volume penny stocks) — the bid-ask spread can eat your money",
+    "Don't panic when you see '₹0' in your account for a few hours after buying — settlement takes time",
+    "Don't ignore contract notes and trade confirmations — they're your proof of ownership",
+    "Don't trade based on WhatsApp tips — they're often pump-and-dump schemes targeting retail investors",
+  ]}
+/>

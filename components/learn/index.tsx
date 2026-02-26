@@ -292,7 +292,7 @@ export function ComparisonTable({
             <tr className="border-b border-border/40">
               {headers.map((h, i) => (
                 <th
-                  key={h}
+                  key={i}
                   className={`px-3 sm:px-4 py-2.5 text-left font-medium text-foreground whitespace-nowrap ${
                     i === 0 ? "sticky left-0 z-10 bg-muted shadow-[2px_0_4px_-2px_rgba(0,0,0,0.08)]" : "bg-muted/20"
                   }`}

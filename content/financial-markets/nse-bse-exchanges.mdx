@@ -1,0 +1,216 @@
+---
+title: "Stock Exchanges: NSE, BSE, and Beyond"
+topic: "financial-markets"
+difficulty: "beginner"
+readTime: "6 min"
+order: 3
+prerequisites:
+  - "how-stock-markets-work"
+keyTakeaways:
+  - "India has TWO major stock exchanges — NSE (younger, tech-first, handles 93% of trading) and BSE (Asia's oldest, 1875). Most stocks are listed on BOTH."
+  - "Nifty 50 (NSE's index) and Sensex (BSE's index) are NOT the market — they're summaries of 50 and 30 top companies respectively. When people say 'market crashed,' they mean these indices fell."
+  - "You don't choose which exchange to trade on — your broker automatically routes your order to whichever exchange offers the best price at that moment."
+quiz:
+  - question: "What's the difference between Nifty 50 and Sensex?"
+    options:
+      - "Nifty 50 tracks 50 large companies on NSE; Sensex tracks 30 large companies on BSE"
+      - "Nifty is for stocks; Sensex is for bonds"
+      - "They track the exact same companies"
+      - "Nifty is the real-time price; Sensex is the daily average"
+    correct: 0
+    explanation: "Nifty 50 is an index of 50 large companies listed on NSE. Sensex is an index of 30 large companies listed on BSE. They both aim to represent the overall market, but Nifty 50 is broader (50 vs 30 companies) and is used more widely for index funds. Most of the Sensex 30 companies are also in Nifty 50."
+  - question: "You want to buy shares of TCS. It's listed on both NSE and BSE. Which exchange should you choose?"
+    options:
+      - "NSE — it's the bigger exchange"
+      - "BSE — it's the older exchange"
+      - "Either — your broker will automatically pick the one with the better price"
+      - "You must choose based on your Demat account type"
+    correct: 2
+    explanation: "Most brokers use 'smart order routing' — they automatically send your order to whichever exchange (NSE or BSE) offers the better price at that moment. You don't need to choose manually. The price difference between exchanges is usually negligible (a few paise) because of arbitrage traders."
+---
+
+When cricket happens in India, it's usually at Wankhede, Eden Gardens, or Chinnaswamy. Different stadiums, same game. India's stock exchanges work the same way — different venues, same stocks, same purpose.
+
+But understanding the differences helps you make sense of the financial news you'll encounter every day.
+
+<Analogy>
+  Think of NSE and BSE like Amazon and Flipkart. Both sell many of the same
+  products (stocks). Both are regulated by the same government body (SEBI, like
+  consumer protection laws). Prices are nearly identical because of competition.
+  You can buy from either one — the product you receive (shares in your Demat
+  account) is exactly the same regardless of which platform you used.
+</Analogy>
+
+## India's Two Major Exchanges
+
+<ComparisonTable
+  title="NSE vs BSE: Head-to-Head"
+  headers={["Feature", "NSE 🟢", "BSE 🔴"]}
+  rows={[
+    [
+      "Full name",
+      "National Stock Exchange of India",
+      "Bombay Stock Exchange (now BSE Limited)",
+    ],
+    [
+      "Founded",
+      "1992 (electronic from Day 1)",
+      "1875 (Asia's oldest stock exchange)",
+    ],
+    ["Listed companies", "~2,200", "~5,500+"],
+    ["Market share (trading volume)", "~93%", "~7%"],
+    ["Key index", "Nifty 50 (50 companies)", "Sensex (30 companies)"],
+    ["Location", "Mumbai — BKC", "Mumbai — Dalal Street"],
+    [
+      "Technology",
+      "Born digital, fastest matching engine",
+      "Modernised from open outcry to electronic",
+    ],
+    [
+      "Known for",
+      "F&O trading, index funds, liquidity",
+      "Heritage, listing smaller companies",
+    ],
+  ]}
+/>
+
+<IndianContext>
+  Most Indian investors interact primarily with NSE because it has higher
+  trading volumes (meaning better liquidity and tighter bid-ask spreads).
+  However, BSE is important too — many companies are listed only on BSE, and
+  BSE's SME platform lists smaller companies that might become tomorrow's blue
+  chips. When people say "the market went up 500 points," they usually mean
+  Sensex (BSE) went up 500 points, since Sensex is the older, more recognized
+  index in mainstream media.
+</IndianContext>
+
+## Understanding Market Indices: Nifty 50 and Sensex
+
+An <JargonTooltip term="Index" definition="A basket of selected stocks that represents the overall market or a segment of it. Changes in the index reflect the average performance of those stocks.">index</JargonTooltip> is like a class average. Instead of checking every student's score, you check the class average to understand overall performance. Nifty 50 is the "class average" of India's 50 biggest companies.
+
+<KeyConcept title="What the Nifty 50 Actually Is">
+  Nifty 50 picks the 50 largest and most liquid companies across sectors —
+  Reliance, TCS, HDFC Bank, Infosys, ITC, and 45 others. Each company has a
+  different "weight" based on its market cap. When Reliance goes up 2%, it moves
+  Nifty more than when a smaller company goes up 2%, because Reliance has a
+  bigger weight.
+</KeyConcept>
+
+<ComparisonTable
+  title="Top 10 Companies in Nifty 50 (Approximate Weights)"
+  headers={["Company", "Sector", "Approx. Weight"]}
+  rows={[
+    ["Reliance Industries", "Oil, Retail, Telecom", "~10%"],
+    ["HDFC Bank", "Banking", "~8%"],
+    ["ICICI Bank", "Banking", "~7%"],
+    ["Infosys", "IT Services", "~6%"],
+    ["TCS", "IT Services", "~5%"],
+    ["ITC", "FMCG, Hotels", "~4%"],
+    ["Bharti Airtel", "Telecom", "~4%"],
+    ["L&T", "Engineering", "~3.5%"],
+    ["SBI", "Banking", "~3%"],
+    ["Bajaj Finance", "NBFC", "~2.5%"],
+  ]}
+/>
+
+These top 10 alone make up **~53%** of the Nifty 50's weight. So when you buy a Nifty 50 index fund, more than half your money goes into just 10 companies. That's important to understand.
+
+## Other Important Indian Indices
+
+<ComparisonTable
+  title="Indian Market Indices to Know"
+  headers={["Index", "What It Tracks", "Why It Matters"]}
+  rows={[
+    [
+      "Nifty 50",
+      "50 largest companies",
+      "The benchmark for Indian equity — most index funds track this",
+    ],
+    [
+      "Sensex",
+      "30 largest companies",
+      "Oldest index, widely quoted in news and TV",
+    ],
+    [
+      "Nifty Next 50",
+      "Companies ranked 51-100 by size",
+      "Tomorrow's Nifty 50 stars — higher growth potential, higher risk",
+    ],
+    [
+      "Nifty Midcap 150",
+      "Mid-sized companies",
+      "Higher growth but more volatile than large caps",
+    ],
+    [
+      "Nifty Smallcap 250",
+      "Smaller companies",
+      "Highest growth potential, highest volatility — not for beginners",
+    ],
+    [
+      "Nifty Bank",
+      "Top 12 banking stocks",
+      "Banking sector performance — India's largest sector by market cap",
+    ],
+  ]}
+/>
+
+<CaseStudy title="Why Index Choice Changes Your Returns">
+  **Lakshmi** invested ₹10,000/month from 2014 to 2024. She chose Nifty 50. Her friend **Arjun** chose Nifty Next 50 (the next 50 largest companies after Nifty 50).
+
+**10-year results:**
+
+- Lakshmi (Nifty 50): ₹12,00,000 invested → ₹23,50,000 (~14% CAGR)
+- Arjun (Nifty Next 50): ₹12,00,000 invested → ₹28,00,000 (~17% CAGR)
+
+Arjun earned ₹4.5L more. But his journey was bumpier — Nifty Next 50 dropped 35% in March 2020 vs Nifty 50's 30% drop. Higher return, but you need stronger nerves.
+
+For beginners: **start with Nifty 50.** It's the smoothest ride with excellent long-term returns.
+
+</CaseStudy>
+
+<InteractiveScenario
+  scenario="A news channel headline says: 'SENSEX CRASHES 1,000 POINTS! INVESTORS LOSE ₹5 LAKH CRORE!' Should you panic?"
+  options={[
+    {
+      text: "Yes — sell everything before it drops more",
+      feedback:
+        "A 1,000-point drop on Sensex (at ~75,000 level) is only about 1.3%. That's a normal fluctuation — Sensex moves 1-2% almost every other week. Headlines use 'points' instead of 'percentage' because bigger numbers create more panic and clicks. Don't fall for it.",
+      isRecommended: false,
+    },
+    {
+      text: "No — a 1,000-point drop is ~1.3% at current levels. This is normal and my SIP will buy shares at a cheaper price this month.",
+      feedback:
+        "You understand the maths. 1,000 points sounds terrifying but at Sensex 75,000, it's barely a rounding error. Your SIP actually benefits from temporary dips — you buy more units for the same money. This is long-term investor thinking. ✅",
+      isRecommended: true,
+    },
+    {
+      text: "Buy more — this is a buying opportunity!",
+      feedback:
+        "Buying dips can work, but a 1.3% drop isn't really a 'dip' worth timing. If you have extra money, go ahead — but don't change your regular investing pattern for a normal daily fluctuation. Save the 'buying opportunity' mindset for actual corrections (10%+ drops).",
+      isRecommended: false,
+    },
+    {
+      text: "Ignore it — I don't understand what those numbers mean anyway",
+      feedback:
+        "Ignoring is better than panicking, but you SHOULD understand what these numbers mean. After reading this article, you know that 1,000 points = ~1.3% at current levels. That knowledge turns scary headlines into background noise. Understanding = peace of mind.",
+      isRecommended: false,
+    },
+  ]}
+/>
+
+<DosDonts
+  dos={[
+    "When you hear 'market crashed X points,' always convert to PERCENTAGE — divide points by the current index level",
+    "Invest in Nifty 50 index fund as your first equity investment — it gives you exposure to India's 50 biggest companies in one click",
+    "Know that your broker automatically routes orders to the best exchange — you don't need to choose between NSE and BSE",
+    "Follow Nifty 50 level broadly (is it at 20K? 24K? 28K?) to understand market context",
+    "Understand that indices are REBALANCED — underperforming companies are removed and replaced with better ones automatically",
+  ]}
+  donts={[
+    "Don't panic over 'X points crashed' headlines — always check the percentage",
+    "Don't think you need to choose between NSE and BSE as an investor — most stocks are on both",
+    "Don't invest in sector-specific indices (Bank Nifty, IT index) as a beginner — they're concentrated and volatile",
+    "Don't confuse the index going up with ALL stocks going up — many individual stocks can fall even when Nifty rises",
+    "Don't compare Sensex points directly with Nifty points — they're different scales (Sensex ~75K, Nifty ~24K)",
+  ]}
+/>

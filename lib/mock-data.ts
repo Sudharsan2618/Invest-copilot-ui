@@ -434,6 +434,7 @@ export const tools: Tool[] = [
   { id: 3, slug: "risk-score", title: "Risk Score Calculator", description: "Take a quick 10-question quiz to discover your risk profile: Conservative, Moderate, or Aggressive.", icon: "Shield" },
   { id: 4, slug: "financial-health", title: "Financial Health Score", description: "Input your income, expenses, savings, and debt to get a comprehensive financial health score from 0-100.", icon: "Heart" },
   { id: 5, slug: "goal-planner", title: "Investment Goal Planner", description: "Set a financial goal, specify your timeline, and discover exactly how much you need to invest monthly.", icon: "Target" },
+  { id: 6, slug: "sip-power-calculator", title: "SIP Power Calculator", description: "See the dramatic difference between flat SIP and step-up SIP. Discover how increasing your SIP by just 10% annually can DOUBLE your wealth over 20 years.", icon: "TrendingUp" },
 ]
 
 // ============================================================

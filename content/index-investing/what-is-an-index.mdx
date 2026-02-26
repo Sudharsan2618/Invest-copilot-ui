@@ -1,0 +1,245 @@
+---
+title: "What is an Index? (Nifty 50 Explained)"
+topic: "index-investing"
+difficulty: "beginner"
+readTime: "6 min"
+order: 1
+keyTakeaways:
+  - "An index is a scorecard of a group of stocks — Nifty 50 tracks India's 50 biggest companies, Sensex tracks 30. When someone says 'the market went up 2%,' they mean one of these indices went up 2%."
+  - "The Nifty 50 is NOT a fixed list — it's rebalanced every 6 months. Companies that shrink get dropped, growing companies get added. This automatic self-cleaning is one reason why index investing works so well."
+  - "Each company in the Nifty 50 has a different weight based on its free-float market cap. Reliance (~10%) moves the index 10x more than a smaller Nifty 50 company (~0.5%). Understanding weights helps you understand index movements."
+quiz:
+  - question: "Nifty 50 drops 300 points in a day. Should you panic?"
+    options:
+      - "Yes — 300 points is a huge crash"
+      - "Calculate the percentage first: at Nifty 24,000, 300 points = 1.25% — this is normal daily fluctuation"
+      - "Sell everything immediately"
+      - "It depends on which stocks dropped"
+    correct: 1
+    explanation: "300 points SOUNDS scary, but at Nifty 24,000 it's only 1.25%. The Nifty moves 1-2% almost daily. In 1999, when Nifty was at 1,500, a 300-point drop would've been a 20% crash. Always convert points to percentages: (Points ÷ Current Level) × 100. This simple math eliminates media-driven panic."
+  - question: "If Reliance stock drops 5% today but all other 49 Nifty 50 stocks are flat, what happens to the Nifty 50 index?"
+    options:
+      - "It drops 5%"
+      - "It drops about 0.5% because Reliance has ~10% weight in the index"
+      - "It stays flat because 49 out of 50 stocks didn't move"
+      - "It drops 0.1%"
+    correct: 1
+    explanation: "Reliance has ~10% weight in Nifty 50. A 5% drop in Reliance impacts the index by 5% × 10% = 0.5%. This is why weighted indices are important to understand — the top 10 companies influence the index far more than the bottom 10. A 5% move in the 50th company (weight ~0.5%) would barely register."
+  - question: "What happens when a company is 'removed' from the Nifty 50?"
+    options:
+      - "Its stock price crashes to zero"
+      - "It no longer counts as a stock market company"
+      - "It's replaced by a growing company; the removed stock continues trading normally — it just isn't in the index anymore"
+      - "Investors in that company lose all their money"
+    correct: 2
+    explanation: "Removal from Nifty 50 means the company no longer qualifies for the top-50 list (usually because it shrank or became less liquid). The stock continues to trade normally on the exchange. Index funds that track Nifty 50 will sell this stock and buy the replacement. The company itself is unchanged — it's just not in the 'Top 50 club' anymore."
+---
+
+"Aaj Nifty 500 points upar gaya!" ("Nifty went up 500 points today!")
+
+You've heard this on TV, in office cafeterias, from your Uber driver. But have you ever stopped to ask: **what IS Nifty?** It's not a company. It's not a stock. You can't walk into NSE and buy "one Nifty."
+
+Yet this single number — Nifty 50 — tells you more about India's economy than any GDP report, any budget speech, or any expert opinion.
+
+<Analogy>
+  Think of Nifty 50 like a class topper board outside a school. The school has
+  5,000 students (listed companies), but the board shows only the top 50 (Nifty
+  50). Their average marks (weighted by "difficulty" of subjects) give you the
+  school's overall academic performance. If the top 50 students do well → school
+  is doing well. If they do poorly → something's wrong. The topper board doesn't
+  show every student — but it's a reliable snapshot.
+</Analogy>
+
+## What Exactly is the Nifty 50?
+
+The Nifty 50 is an **index** — a mathematical formula that tracks the collective performance of India's 50 largest, most liquid companies listed on the NSE.
+
+<KeyConcept title="Index = A Weighted Average of Selected Stocks">
+  The Nifty 50 takes 50 companies, assigns each a **weight** based on its
+  free-float market cap (the portion of shares available for public trading),
+  and calculates a single number that represents their collective performance.
+  When this number goes from 24,000 to 24,500, it means the combined value of
+  these 50 companies increased by about 2%.
+</KeyConcept>
+
+<FormulaBox
+  title="How Nifty 50 Is Calculated (Simplified)"
+  formula="Nifty 50 = (Current Total Market Cap of 50 stocks ÷ Base Market Cap) × 1000"
+  variables={[
+    {
+      symbol: "Current Total Market Cap",
+      meaning: "Sum of (price × free-float shares) for all 50 companies",
+    },
+    {
+      symbol: "Base Market Cap",
+      meaning: "The reference value from November 3, 1995 (base date)",
+    },
+    {
+      symbol: "1000",
+      meaning: "The base value — Nifty started at 1,000 on its base date",
+    },
+  ]}
+/>
+
+From a base value of 1,000 in 1995, Nifty 50 has reached **24,000+** in 2024 — a 24x increase. That's approximately **11.5% compounded annually for ~29 years**, through multiple crashes, political changes, wars, and pandemics.
+
+## Understanding Weights — Why It Matters
+
+Not all 50 stocks affect the Nifty equally:
+
+<ComparisonTable
+  title="Top 10 Nifty 50 Companies by Weight"
+  headers={["Rank", "Company", "Sector", "Approx. Weight"]}
+  rows={[
+    ["1", "Reliance Industries", "Conglomerate", "~10.0%"],
+    ["2", "HDFC Bank", "Banking", "~8.2%"],
+    ["3", "ICICI Bank", "Banking", "~7.1%"],
+    ["4", "Infosys", "IT", "~5.8%"],
+    ["5", "TCS", "IT", "~4.5%"],
+    ["6", "ITC", "FMCG", "~4.2%"],
+    ["7", "Bharti Airtel", "Telecom", "~3.8%"],
+    ["8", "L&T", "Engineering", "~3.5%"],
+    ["9", "SBI", "Banking", "~3.0%"],
+    ["10", "Bajaj Finance", "NBFC", "~2.5%"],
+  ]}
+/>
+
+<IndianContext>
+  These top 10 companies alone represent **~53% of the entire Nifty 50's
+  weight.** This means when you buy a Nifty 50 index fund, more than half your
+  money goes into just 10 companies. The bottom 10 companies each have weights
+  of 0.5-1.0% — they barely move the index. This "top-heavy" nature is important
+  to understand: a 5% move in Reliance impacts your index fund 20x more than a
+  5% move in the smallest Nifty 50 constituent.
+</IndianContext>
+
+## The Self-Cleaning Magic — Why Index Investing Works
+
+<CaseStudy title="How Nifty 50 Automatically Stays Relevant">
+  In 2020, the Nifty 50 included Zee Entertainment and GAIL. By 2023, both were replaced — Zee was dropped due to falling market cap (corporate governance issues), and companies like Divi's Labs and Apollo Hospitals took their places.
+
+**You didn't have to do anything.** No research, no "should I sell Zee?" decision, no timing required. The index methodology automatically:
+
+1. Identified underperformers
+2. Removed them
+3. Added growing replacements
+4. Reweighted the portfolio
+
+This happens every 6 months (March and September). It's like having a free portfolio manager who cleans up your investments twice a year — for an expense ratio of 0.1%.
+
+</CaseStudy>
+
+## India's Key Indices — Beyond Nifty 50
+
+<ComparisonTable
+  title="Important Indian Market Indices"
+  headers={["Index", "Companies", "Use Case", "Best For"]}
+  rows={[
+    [
+      "Nifty 50",
+      "Top 50 (large-cap)",
+      "Core India benchmark",
+      "Beginners — your first index fund",
+    ],
+    [
+      "Sensex",
+      "Top 30 (large-cap, BSE)",
+      "Oldest Indian benchmark",
+      "Media references — same concept as Nifty",
+    ],
+    [
+      "Nifty Next 50",
+      "Companies ranked 51-100",
+      "Tomorrow's Nifty 50",
+      "Slightly higher growth, higher risk",
+    ],
+    [
+      "Nifty 100",
+      "Top 100 (combines Nifty 50 + Next 50)",
+      "Broader large-cap exposure",
+      "One-fund large-cap solution",
+    ],
+    [
+      "Nifty Midcap 150",
+      "Companies ranked 101-250",
+      "Mid-cap exposure",
+      "Growth seekers with 7+ year horizon",
+    ],
+    [
+      "Nifty Smallcap 250",
+      "Companies ranked 251-500",
+      "Small-cap exposure",
+      "Aggressive investors only — very volatile",
+    ],
+  ]}
+/>
+
+<ComparisonChart
+  title="₹10,000/month SIP for 10 Years (2014-2024) — Index Comparison"
+  items={[
+    {
+      label: "Nifty Smallcap 250 (~18% CAGR)",
+      value: 3200000,
+      color: "success",
+    },
+    { label: "Nifty Midcap 150 (~16% CAGR)", value: 2800000, color: "success" },
+    { label: "Nifty Next 50 (~15% CAGR)", value: 2600000, color: "success" },
+    { label: "Nifty 50 (~13% CAGR)", value: 2350000, color: "success" },
+    { label: "Sensex (~12.5% CAGR)", value: 2250000, color: "warning" },
+  ]}
+/>
+
+<KeyConcept title="Start With Nifty 50, Expand Later">
+  Higher returns from smaller indices come with significantly higher volatility.
+  Nifty Smallcap 250 dropped 45% during COVID vs Nifty 50's 35%. For your first
+  index fund, Nifty 50 is the safest, most liquid, and most proven choice. Once
+  you have 1-2 years of investing experience and a strong stomach, consider
+  adding 10-20% in Nifty Next 50 or Midcap 150.
+</KeyConcept>
+
+<InteractiveScenario
+  scenario="Your friend says: 'Nifty 50 only returned 13% last year while Small-cap returned 35%. I should switch my entire portfolio to small-cap index!' What should you say?"
+  options={[
+    {
+      text: "Great idea — higher returns are always better",
+      feedback:
+        "Small-cap returned 35% in one good year, but it also dropped 45% in 2020 and was FLAT for 3 years (2018-2020). Chasing last year's best-performing index is the classic retail mistake. Small-caps have higher AVERAGE returns but with MUCH wilder swings — most people can't stomach a 45% portfolio drop.",
+      isRecommended: false,
+    },
+    {
+      text: "One year's return doesn't predict next year's. Small-caps can drop 40-50% in bad years. Stick with Nifty 50 as your core and add small-cap as a 10-20% satellite at most.",
+      feedback:
+        "Exactly right. Last year's winner is often next year's laggard. A core-satellite approach — 70-80% Nifty 50 (stable core) + 10-20% small/mid-cap (growth satellite) — gives you the best of both worlds without the stomach-churning volatility of going all-in on small-caps. ✅",
+      isRecommended: true,
+    },
+    {
+      text: "Ignore small-caps completely — they're too risky",
+      feedback:
+        "Over long periods (15+ years), small-caps have rewarded patient investors significantly. Dismissing them entirely means missing genuine long-term growth. The key is SIZING — 10-20% allocation, not 100%. And only with money you truly won't need for 10+ years.",
+      isRecommended: false,
+    },
+    {
+      text: "Wait for the small-cap to drop, then switch",
+      feedback:
+        "Timing when to switch between indices is just market timing with extra steps. Nobody can consistently predict which index will outperform next. Systematic allocation across both (80/20 or 70/30 large/small-mid) removes the need for timing.",
+      isRecommended: false,
+    },
+  ]}
+/>
+
+<DosDonts
+  dos={[
+    "Understand that Nifty 50 is a WEIGHTED average — top 10 companies drive most of the movement",
+    "Always convert index 'points' to PERCENTAGE before reacting — 500 points at 24,000 is just 2%",
+    "Start with Nifty 50 as your first index fund — it's India's most liquid, most stable, most proven benchmark",
+    "Know that the index self-cleans every 6 months — weak companies out, strong ones in, automatically",
+    "Follow multiple indices (Nifty 50, Next 50, Midcap) to understand the full market, not just large-caps",
+  ]}
+  donts={[
+    "Don't panic over point-based headlines — '1,000 points crashed' at Nifty 24,000 is only 4%",
+    "Don't chase last year's best-performing index — the winner rotates between large, mid, and small-cap",
+    "Don't invest in small-cap index with more than 20% of your portfolio as a beginner — the volatility is intense",
+    "Don't confuse 'Nifty is at an all-time high' with 'market is expensive' — the index SHOULD keep hitting new highs as the economy grows",
+    "Don't think the Nifty 50 represents ALL stocks — there are 5,000+ listed companies, Nifty shows only the top 50",
+  ]}
+/>

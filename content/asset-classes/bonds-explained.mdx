@@ -1,0 +1,219 @@
+---
+title: "Bonds: Lending Your Money for Returns"
+topic: "asset-classes"
+difficulty: "beginner"
+readTime: "6 min"
+order: 3
+prerequisites:
+  - "what-are-asset-classes"
+keyTakeaways:
+  - "When you buy a bond, you're LENDING money — to a company or the government. They promise to pay you fixed interest (coupon) and return your principal on a set date. You're the lender, not the owner."
+  - "Government bonds (G-Secs) are the safest investment in India — literally backed by the Government of India's ability to collect taxes. They're how the government borrows money from citizens."
+  - "Bond prices move OPPOSITE to interest rates. When RBI raises rates, existing bond prices fall. When RBI cuts rates, existing bond prices rise. This inverse relationship is the most important concept in fixed-income investing."
+quiz:
+  - question: "You buy a Government of India bond with 7% coupon for ₹1,000 (face value). Next year, RBI raises interest rates and new bonds offer 8%. What happens to YOUR bond?"
+    options:
+      - "Nothing — you still get 7% forever"
+      - "Your coupon increases to 8% automatically"
+      - "Your bond's market price drops below ₹1,000 (because new buyers prefer 8% bonds), but you still receive 7% coupon"
+      - "The government compensates you for the difference"
+    correct: 2
+    explanation: "Your 7% coupon is FIXED — it doesn't change. But if new bonds offer 8%, nobody will pay ₹1,000 for your 7% bond when they can buy an 8% bond for the same price. Your bond's market price drops to ~₹875 to make the effective yield 8% for new buyers. However, if you HOLD to maturity, you still get your full ₹1,000 back + all coupon payments. The price drop only matters if you sell early."
+  - question: "Which is safer — a corporate bond from Tata or a Government of India bond?"
+    options:
+      - "Tata corporate bond — Tata is a more trusted brand"
+      - "Government bond — the government can print money and collect taxes, a company can't"
+      - "Both are equally safe"
+      - "Depends on the interest rate"
+    correct: 1
+    explanation: "Government bonds are backed by the sovereign guarantee of India — the government can always collect taxes or (in extreme cases) print money to pay its debts. A corporate bond, even from Tata, carries credit risk — the company COULD default (extremely unlikely for Tata, but possible for smaller companies). This is why government bonds pay lower interest than corporate bonds — lower risk = lower reward."
+---
+
+In the last article, you learned that stocks make you an OWNER. Bonds are the opposite: **they make you a LENDER.**
+
+When you buy a bond, you're lending money to someone — the Government of India, a company like Reliance, or a bank like SBI. In return, they promise to pay you regular interest (called <JargonTooltip term="Coupon" definition="The fixed interest payment a bond pays periodically (usually semi-annually). A 7% coupon on a ₹1,000 bond means ₹70/year.">coupon</JargonTooltip>) and return your money on a fixed date (called <JargonTooltip term="Maturity" definition="The date when the bond issuer returns the original investment (face value) to the bondholder.">maturity</JargonTooltip>).
+
+<Analogy>
+  Think of bonds like Fixed Deposits — but instead of lending to your bank,
+  you're lending directly to the government or a company. The interest rate is
+  fixed at the start. You know exactly when you'll get your money back. The
+  difference? Bonds can be bought and sold on the market (like stocks), while
+  FDs are stuck with your bank until maturity.
+</Analogy>
+
+## How Bonds Work — A Simple Example
+
+You buy a Government of India bond worth ₹1,000 (face value) with a 7.2% annual coupon and 10-year maturity.
+
+<ComparisonTable
+  title="Your Bond Cash Flows"
+  headers={["Year", "What You Receive", "Amount"]}
+  rows={[
+    ["Year 0", "You PAY the face value", "-₹1,000"],
+    ["Year 1-10", "Annual coupon (7.2%)", "+₹72/year"],
+    ["Year 10", "Face value returned", "+₹1,000"],
+    ["Total received", "₹720 interest + ₹1,000 principal", "+₹1,720"],
+  ]}
+/>
+
+**Your total return: ₹720 in interest on a ₹1,000 investment over 10 years.** Predictable. Boring. And that's exactly the point — bonds provide stability, not excitement.
+
+<IndianContext>
+  Individual investors can now buy Government of India bonds directly through
+  **RBI Retail Direct** — a free online account that lets you participate in
+  G-Sec auctions. Minimum investment starts at ₹10,000. You can also buy
+  Sovereign Gold Bonds (SGBs), Treasury Bills (T-Bills), and State Development
+  Loans through this platform. It's one of the safest investments available,
+  literally backed by the Government of India.
+</IndianContext>
+
+## The Big Concept: Why Bond Prices Move Opposite to Interest Rates
+
+This is the #1 concept in bond investing, and most beginners get confused by it:
+
+<KeyConcept title="The Price-Yield Seesaw">
+  Imagine you own a 7% bond. RBI raises rates to 8%. Now new bonds pay 8%. Who
+  wants YOUR old 7% bond? Nobody — unless you sell it at a DISCOUNT. Your bond's
+  price drops from ₹1,000 to ~₹875. Conversely, if RBI CUTS rates to 6%, your 7%
+  bond becomes premium — its price rises above ₹1,000 because it pays more than
+  new bonds.
+</KeyConcept>
+
+<ComparisonTable
+  title="Bond Price vs Interest Rate Movement"
+  headers={[
+    "RBI Action",
+    "New Bond Rates",
+    "Your Existing 7% Bond Price",
+    "Why",
+  ]}
+  rows={[
+    [
+      "Raises rates to 8%",
+      "8%",
+      "Falls (~₹875)",
+      "Your 7% is less attractive than new 8%",
+    ],
+    [
+      "Keeps rates at 7%",
+      "7%",
+      "Stays at ₹1,000",
+      "Your bond matches the market",
+    ],
+    [
+      "Cuts rates to 6%",
+      "6%",
+      "Rises (~₹1,167)",
+      "Your 7% is MORE attractive than new 6%",
+    ],
+  ]}
+/>
+
+## Types of Bonds Available in India
+
+<ComparisonTable
+  title="Bond Types for Indian Investors"
+  headers={["Type", "Issuer", "Typical Yield", "Risk", "How to Buy"]}
+  rows={[
+    [
+      "Government Securities (G-Secs)",
+      "Govt. of India",
+      "7-7.5%",
+      "Almost zero (sovereign guarantee)",
+      "RBI Retail Direct, Gilt funds",
+    ],
+    [
+      "State Development Loans (SDLs)",
+      "State governments",
+      "7.5-8%",
+      "Very low",
+      "RBI Retail Direct",
+    ],
+    [
+      "Treasury Bills (T-Bills)",
+      "Govt. of India (short-term)",
+      "6.5-7%",
+      "Almost zero",
+      "RBI Retail Direct (91/182/364 day)",
+    ],
+    [
+      "Corporate Bonds (AAA)",
+      "Top companies (Reliance, HDFC)",
+      "7.5-8.5%",
+      "Low",
+      "Bond platforms, debt mutual funds",
+    ],
+    [
+      "Corporate Bonds (AA/A)",
+      "Good companies",
+      "8.5-10%",
+      "Medium",
+      "Bond platforms — requires research",
+    ],
+    [
+      "Tax-Free Bonds",
+      "Govt. entities (NHAI, IRFC)",
+      "5.5-6.5% (tax-free)",
+      "Very low",
+      "Secondary market only (limited supply)",
+    ],
+  ]}
+/>
+
+<CaseStudy title="How Deepa Used Bonds During a Market Crash">
+  **Deepa**, 35, a freelance designer in Mumbai, had ₹12,00,000 invested: 70% equity (₹8,40,000), 30% in a gilt mutual fund (₹3,60,000 — invests in government bonds).
+
+**March 2020:** COVID crash hit. Her equity dropped 35% → ₹5,46,000. But her gilt fund ROSE 8% → ₹3,89,000. Why? Because RBI slashed interest rates from 5.15% to 4% to stimulate the economy — and bond prices rise when rates fall.
+
+**Her total portfolio:** ₹5,46,000 + ₹3,89,000 = ₹9,35,000 (down 22%, not 35%)
+
+While pure equity investors lost 35%, Deepa's bond allocation cushioned the blow by ₹1,60,000. This is why bonds exist in a portfolio — not for high returns, but to soften crashes and provide stability.
+
+</CaseStudy>
+
+<InteractiveScenario
+  scenario="You're 28 years old. You have ₹5,00,000 to invest. Your financial advisor says to put 30% (₹1,50,000) in bonds/debt. You think: 'But bonds only give 7%! I want to put everything in equities for 12%+.' What should you do?"
+  options={[
+    {
+      text: "Skip bonds entirely — you're young and can handle equity volatility",
+      feedback:
+        "Theoretically correct for PURELY rational investors. But most people aren't. Without bonds to cushion crashes, a 40% equity drop means your entire ₹5L becomes ₹3L — and most people panic-sell at that point. The bond allocation isn't for returns — it's for keeping you CALM enough to stay invested in equities.",
+      isRecommended: false,
+    },
+    {
+      text: "Allocate 20-30% to debt/bonds as a stability buffer, with the rest in equity index funds",
+      feedback:
+        "Smart balance. The 20-30% in bonds means during a crash, part of your portfolio holds steady (or even gains). This psychological cushion prevents panic-selling — which is the #1 wealth destroyer for retail investors. Over 10 years, a 70/30 equity-bond portfolio returns ~10-11% CAGR with significantly smoother ride. ✅",
+      isRecommended: true,
+    },
+    {
+      text: "Put 50% in bonds for safety",
+      feedback:
+        "Too conservative for a 28-year-old with a 20+ year investing horizon. At 50% bonds, your portfolio returns ~9% CAGR instead of ~11%. Over 20 years, that 2% difference on ₹5L means ₹7L less wealth. You're young enough to take equity risk — use bonds as a buffer (20-30%), not the core.",
+      isRecommended: false,
+    },
+    {
+      text: "Buy government bonds directly through RBI Retail Direct",
+      feedback:
+        "Great option for the debt portion of your portfolio! RBI Retail Direct gives you direct access to G-Secs at no brokerage cost. For simplicity though, a gilt mutual fund or short-term debt fund achieves the same exposure with easier management and liquidity.",
+      isRecommended: false,
+    },
+  ]}
+/>
+
+<DosDonts
+  dos={[
+    "Include 20-30% bonds/debt in your portfolio — it's your crash cushion, not a return driver",
+    "Use short-term debt funds or liquid funds for goals under 3 years — they're safer than equity",
+    "Understand the inverse relationship: bond prices UP when rates DOWN, and vice versa",
+    "Explore RBI Retail Direct for buying government bonds directly — it's free and sovereign-guaranteed",
+    "Use bonds to rebalance: when equity drops in a crash, sell some bonds to buy cheap equity",
+  ]}
+  donts={[
+    "Don't buy corporate bonds below AA rating as a beginner — credit risk increases sharply below this level",
+    "Don't confuse FD returns with bond fund returns — bond funds can have negative returns if interest rates rise sharply",
+    "Don't invest long-term bond funds if you need money in 1-2 years — they're sensitive to rate changes",
+    "Don't skip bonds because they're 'boring' — boring is exactly what you want during a crisis",
+    "Don't chase high-yield corporate bonds offering 12-15% — if it sounds too good, there's usually credit risk you're not seeing",
+  ]}
+/>
